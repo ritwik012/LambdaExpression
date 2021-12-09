@@ -15,7 +15,8 @@ namespace PersonDataManagement
             data.RetreivingTopTwoRecords_ForAgeIs_LessThanSixty(listPersonsInCity);
             data.CheckingForTeenagerPerson(listPersonsInCity);
             data.RetrieveAverageAge(listPersonsInCity);
-            
+            data.CheckingForSpecificName(listPersonsInCity);
+            data.SkipRecord_ForAge_LessThanSixty(listPersonsInCity);
         }
     }
 }

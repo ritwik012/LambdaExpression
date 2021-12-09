@@ -39,6 +39,26 @@ namespace PersonDataManagement
             double averageAge = listPersonsInCity.Average(x => x.Age);
             Console.WriteLine("The Average age of all Persons in the list are : " + averageAge);
         }
-       
+        public void CheckingForSpecificName(List<Person> listPersonsInCity)
+        {
+            Console.WriteLine("Enter the name you want to check in the list : ");
+            string search = Console.ReadLine();
+            if (listPersonsInCity.Exists(e => e.Name == search))
+            {
+                Console.WriteLine("Yes, The Name {0} is Present in the list", search);
+            }
+            else
+            {
+                Console.WriteLine("No, The Name {0} is not Present in the list", search);
+            }
+        }
+        public void SkipRecord_ForAge_LessThanSixty(List<Person> listPersonsInCity)
+        {
+            Console.WriteLine("The List after Skipping record for age less than 60 : ");
+            foreach (Person person in listPersonsInCity.Where(x => x.Age > 60))
+            {
+                Console.WriteLine("Name : " + person.Name + "\t\tAge : " + person.Age);
+            }
+        }
     }
 }
